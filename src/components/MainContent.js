@@ -1,6 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-export default (props) => {
+const MainContent = (props) => {
   return (
     <div className="col-xs-8">
       <h1>{props.cocktail.name}</h1>
@@ -17,3 +18,11 @@ export default (props) => {
     </div>
   )
 }
+
+const mapStateToProps = (state) =>{
+  return {
+    cocktail: state.currentCocktail
+  }
+}
+
+export default connect(mapStateToProps)(MainContent)

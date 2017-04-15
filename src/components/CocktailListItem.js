@@ -1,10 +1,15 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-export default (props) => {
+import { getCocktail } from '../actions'
+
+const CocktailListItem = (props) => {
   return (
     <li><a onClick={(e) => {
       e.preventDefault()
-      props.onCurrentCocktailChange(props.cocktail)
+      props.dispatch(getCocktail(props.cocktail))
     }} href="#">{props.cocktail.name}</a></li>
   )
 }
+
+export default connect()(CocktailListItem)
