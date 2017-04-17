@@ -5,7 +5,7 @@ import CocktailListItem from './CocktailListItem'
 
 const CocktailList = (props) => {
   return (
-    <ul>
+    <ul className="col-xs-4">
       {props.cocktails.map((cocktail) => <CocktailListItem
         key={cocktail.id}
         cocktail={cocktail}
