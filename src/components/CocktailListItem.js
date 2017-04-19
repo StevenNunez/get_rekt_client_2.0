@@ -1,14 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
-import { getCocktail } from '../actions'
+import { Link } from 'react-router-dom'
 
 const CocktailListItem = (props) => {
   return (
-    <li><a onClick={(e) => {
-      e.preventDefault()
-      props.dispatch(getCocktail(props.cocktail))
-    }} href="#">{props.cocktail.name}</a></li>
+    <li>
+      <Link to={`/cocktails/${props.cocktail.id}`}>{props.cocktail.name}</Link>
+    </li>
   )
 }
 
